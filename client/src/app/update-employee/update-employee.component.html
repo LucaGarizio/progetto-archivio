@@ -1,13 +1,21 @@
 <div class="container">
-    <h2>Modifica Dipendente</h2>
-    <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" [(ngModel)]="employee.name" name="name" class="form-control" required>
+    <div class="row justify-content-center pt-4">
+        <div class="col-8">
+            <h2 class="text-center">Modifica Dipendente</h2>
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group my-3">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" [(ngModel)]="employee.name" name="name" class="form-control" required>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="submit" class="btn w-25 btn-success me-3">Salva</button>
+                        <button type="button" class="btn w-25 btn-secondary" (click)="onCancel()">Annulla</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <!-- Aggiungi altri campi del dipendente se necessario -->
-        <button type="submit" class="btn btn-success">Salva</button>
-        <button type="button" class="btn btn-secondary" (click)="onCancel()">Annulla</button>
-    </form>
+    </div>
 </div>
+            
 
