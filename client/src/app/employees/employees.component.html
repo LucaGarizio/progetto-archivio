@@ -1,0 +1,30 @@
+
+<div class="container text-white">
+    <div class="row gy-5">
+        <div class="title">
+            <h1 class="text-center text-dark pt-5
+            ">LISTA DIPENDENTI</h1>
+        </div>
+        <div class="add text-center">
+            <a routerLink="/add-employee" class="btn btn-primary">Aggiungi dipendente</a>
+        </div>
+        <div class="col-md-4 col-12 d-flex justify-content-center" *ngFor="let employee of data; index as i">
+            <div class="card bg-dark shadow-lg" style="width:25rem;" >
+                <div class="card-body">
+                    <div class="row">
+                        <h5 class="card-title">Id: {{employee.id}} </h5>
+                        <h5 class="card-title mb-2">{{employee.name}}</h5>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-12 justify-content-center d-flex">
+                            <button class="btn btn-warning me-4" [routerLink]="['/update-employee', employee.id]">Modifica</button>
+
+                            <a routerLink=""><button class="btn btn-danger" (click)="removeEmployee(employee.id)">Cancella</button> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+
